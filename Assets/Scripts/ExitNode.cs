@@ -43,59 +43,12 @@ public class ExitNode : MonoBehaviour
           
         }
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-           
-            FindFirstObjectByType<EndingManager>().NormalExit();
-            Invoke("LoadNextLevel", 1f); 
+            
+            FindFirstObjectByType<EndingManager>().TriggerEnding();
         }
     }
-
-    void LoadNextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//using UnityEngine;
-//using UnityEngine.SceneManagement;
-
-//public class ExitNode : MonoBehaviour
-//{
-//    void OnTriggerEnter2D(Collider2D other)
-//    {
-//        if (other.CompareTag("Player"))
-//        {
-//            Debug.Log("Level Complete! Loading Next Level...");
-//            FindFirstObjectByType<EndingManager>().NormalExit();
-//            Invoke("LoadNextLevel", 1f); // 1 sec delay before next level
-//        }
-//    }
-
-//    void LoadNextLevel()
-//    {
-//        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-//    }
-//}
