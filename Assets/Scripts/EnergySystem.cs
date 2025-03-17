@@ -5,10 +5,13 @@ public class EnergySystem : MonoBehaviour
 {
     public int maxEnergy = 100;
     private int currentEnergy;
-    public Slider energyBar; 
+    public Slider energyBar;
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = FindFirstObjectByType<GameManager>();
+
         if (energyBar == null)
         {
             energyBar = GameObject.Find("EnergyBar").GetComponent<Slider>();
@@ -17,7 +20,7 @@ public class EnergySystem : MonoBehaviour
         {
            
         }
-
+        energyBar.interactable = false;
         SetEnergyBarPosition();
 
 
@@ -47,10 +50,7 @@ public class EnergySystem : MonoBehaviour
             UseEnergy(10);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            UseEnergy(20);
-        }
+       
     }
 
     public void UseEnergy(int amount)
@@ -59,13 +59,19 @@ public class EnergySystem : MonoBehaviour
         {
             currentEnergy -= amount;
             energyBar.value = currentEnergy;
+            if (currentEnergy <= 0)
+            {
+                gameManager.GameOver();
+            }
         }
         else
         {
-          
+            if (currentEnergy <= 0)
+            {
+                gameManager.GameOver();
+            }
         }
     }
-
     public void RechargeEnergy(int amount)
     {
         currentEnergy = Mathf.Min(currentEnergy + amount, maxEnergy);
