@@ -23,7 +23,7 @@ public class SecurityBot : MonoBehaviour
 
     void Start()
     {
-        gridManager = FindObjectOfType<GridManager>();
+        gridManager = FindFirstObjectByType<GridManager>();
         if (gridManager == null)
         {
             return;
@@ -36,7 +36,7 @@ public class SecurityBot : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindFirstObjectByType<GameManager>();
         rb = GetComponent<Rigidbody2D>();
         lastDecisionTime = Time.time;
     }
