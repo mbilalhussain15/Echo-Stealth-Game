@@ -22,7 +22,7 @@ public class SecurityNode : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         
     }
-   
+  
     public static void ResetPlacement()
     {
         isAlreadyPlaced = false;
