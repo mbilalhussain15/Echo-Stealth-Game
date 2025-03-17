@@ -8,13 +8,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isStealthed = false;
     private SpriteRenderer spriteRenderer;
     private GridManager gridManager;
-    private bool isMoving = false;
-
+    private Coroutine stealthCoroutine;
     public bool IsStealthed => isStealthed;
 
     void Start()
     {
-        gridManager = FindObjectOfType<GridManager>();
+        gridManager = FindFirstObjectByType<GridManager>();
         if (gridManager == null)
         {
             return;
@@ -70,18 +69,21 @@ public class PlayerMovement : MonoBehaviour
         HandleStealth();
     }
 
+
+    private bool isMoving = false;
+
     void HandleMovement()
     {
         if (isMoving) return; 
 
         Vector2 moveDirection = GetInputDirection();
-        if (moveDirection == Vector2.zero) return; 
+        if (moveDirection == Vector2.zero) return;
 
         Vector2 newTarget = targetPosition + moveDirection * gridManager.tileSize;
 
         if (IsPositionValid(newTarget))
         {
-            StartCoroutine(MoveToPosition(newTarget)); 
+            StartCoroutine(MoveToPosition(newTarget));
         }
     }
 
@@ -97,6 +99,8 @@ public class PlayerMovement : MonoBehaviour
         targetPosition = newTarget;
         isMoving = false;
     }
+
+
 
     Vector2 GetInputDirection()
     {
@@ -119,17 +123,30 @@ public class PlayerMovement : MonoBehaviour
         int x = Mathf.FloorToInt(relativePos.y / -gridManager.tileSize);
         int y = Mathf.FloorToInt(relativePos.x / gridManager.tileSize);
 
-        return x >= 0 && x < gridManager.rows &&
-               y >= 0 && y < gridManager.cols &&
-               gridManager.grid[x, y].isConnected;
+        if (x >= 0 && x < gridManager.rows &&
+            y >= 0 && y < gridManager.cols &&
+            gridManager.grid[x, y].isConnected)
+        {
+            return true;
+        }
+        return false; 
     }
+
 
     void HandleStealth()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isStealthed)
         {
-            isStealthed = !isStealthed;
-            spriteRenderer.color = isStealthed ? new Color(1f, 1f, 1f, 0.5f) : Color.white;
+            isStealthed = true;
+            spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
+            stealthCoroutine = StartCoroutine(DeactivateStealth());
         }
+    }
+    IEnumerator DeactivateStealth()
+    {
+        yield return new WaitForSeconds(6f);
+        isStealthed = false;
+        spriteRenderer.color = Color.white;
+        stealthCoroutine = null;
     }
 }

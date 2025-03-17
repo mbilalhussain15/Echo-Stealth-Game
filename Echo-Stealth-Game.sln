@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< HEAD
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
+=======
+# Visual Studio 15
+>>>>>>> a4f36b6aab911bb9f0e2e3ec793596a1fc9ba7e9
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{F7ECF9D8-B85E-EA20-D049-DCE6843A067B}"
 EndProject
 Global
