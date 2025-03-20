@@ -711,6 +711,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296539901}
   m_CullTransparentMesh: 1
+--- !u!1 &423448834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 423448838}
+  - component: {fileID: 423448837}
+  - component: {fileID: 423448836}
+  - component: {fileID: 423448835}
+  m_Layer: 5
+  m_Name: continueButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &423448835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423448834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 423448836}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 73a20525ed4cb2341913bc77ff03aa7c, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &423448836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423448834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3931559, g: 0.6679058, b: 0.8962264, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &423448837
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423448834}
+  m_CullTransparentMesh: 1
+--- !u!224 &423448838
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423448834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 553837449}
+  m_Father: {fileID: 1781754401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &461060907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1135,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &553837448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553837449}
+  - component: {fileID: 553837451}
+  - component: {fileID: 553837450}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &553837449
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553837448}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 423448838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &553837450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553837448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Continue
+--- !u!222 &553837451
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553837448}
+  m_CullTransparentMesh: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1578,7 @@ GameObject:
   - component: {fileID: 698896342}
   - component: {fileID: 698896344}
   - component: {fileID: 698896345}
+  - component: {fileID: 698896346}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1440,6 +1653,57 @@ MonoBehaviour:
   Level: {fileID: 1788233574}
   DataFragments: {fileID: 1821903}
   resumeButton: {fileID: 1712423340}
+--- !u!114 &698896346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698896339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eec5158ee86c7348862455c86fe2a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyData:
+    encryptedMessages:
+    - 01010100 01101000 01100101 00100000 01001000 01100001 01100011 01101011 01100101
+      01110010 00100111 01110011 00100000 01001100 01100001 01110011 01110100 00100000
+      01010011 01110100 01100001 01101110 01100100
+    - 01010100 01101000 01100101 00100000 01000110 01101111 01110010 01100111 01101111
+      01110100 01110100 01100101 01101110 00100000 01000001 01001001
+    - 01010100 01101000 01100101 00100000 01001110 01100101 01101111 01101110 00100000
+      01010010 01100101 01100010 01100101 01101100 01101100 01101001 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01000111 01101000 01101111 01110011 01110100
+      00100000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01001101
+      01100001 01100011 01101000 01101001 01101110 01100101
+    - 01010100 01101000 01100101 00100000 01000001 01110101 01100111 01101101 01100101
+      01101110 01110100 01100101 01100100 00100000 01010011 01101111 01101100 01100100
+      01101001 01100101 01110010
+    - 01010100 01101000 01100101 00100000 01000100 01100001 01110100 01100001 00100000
+      01001000 01100101 01101001 01110011 01110100
+    - 01010100 01101000 01100101 00100000 01001100 01100001 01110011 01110100 00100000
+      01001000 01110101 01101101 01100001 01101110
+    - 01010100 01101000 01100101 00100000 01000011 01101111 01110010 01110000 01101111
+      01110010 01100001 01110100 01100101 00100000 01010011 01110000 01111001
+    - 01010100 01101000 01100101 00100000 01000001 01001001 00100000 01010101 01110000
+      01110010 01101001 01110011 01101001 01101110 01100111
+    - 01010100 01101000 01100101 00100000 01000011 01111001 01100010 01100101 01110010
+      01101110 01100101 01110100 01101001 01100011 00100000 01010011 01110101 01110010
+      01100111 01100101 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01001100 01101111 01110011 01110100 00100000
+      01010000 01110010 01101111 01110100 01101111 01110100 01111001 01110000 01100101
+    - 01010100 01101000 01100101 00100000 01010110 01101001 01110010 01110100 01110101
+      01100001 01101100 00100000 01010000 01110010 01101001 01110011 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01001110 01100101 01101111 01101110 00100000
+      01010000 01110010 01101111 01110000 01101000 01100101 01110100
+    - 01010100 01101000 01100101 00100000 01000100 01100001 01110100 01100001 00100000
+      01000111 01110010 01100001 01110110 01100101 01111001 01100001 01110010 01100100
+    - 01010100 01101000 01100101 00100000 01000001 01001001 00100111 01110011 00100000
+      01010000 01101100 01100101 01100001
+  messagePanel: {fileID: 1781754400}
+  messageText: {fileID: 1944999356}
+  continueButton: {fileID: 423448835}
 --- !u!1 &726284089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,9 +3468,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eec5158ee86c7348862455c86fe2a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  encryptedMessage: 01101000 01101001 01100100 01100100 01100101 01101110
+  storyData:
+    encryptedMessages:
+    - 01010100 01101000 01100101 00100000 01001000 01100001 01100011 01101011 01100101
+      01110010 00100111 01110011 00100000 01001100 01100001 01110011 01110100 00100000
+      01010011 01110100 01100001 01101110 01100100
+    - 01010100 01101000 01100101 00100000 01000110 01101111 01110010 01100111 01101111
+      01110100 01110100 01100101 01101110 00100000 01000001 01001001
+    - 01010100 01101000 01100101 00100000 01001110 01100101 01101111 01101110 00100000
+      01010010 01100101 01100010 01100101 01101100 01101100 01101001 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01000111 01101000 01101111 01110011 01110100
+      00100000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01001101
+      01100001 01100011 01101000 01101001 01101110 01100101
+    - 01010100 01101000 01100101 00100000 01000001 01110101 01100111 01101101 01100101
+      01101110 01110100 01100101 01100100 00100000 01010011 01101111 01101100 01100100
+      01101001 01100101 01110010
+    - 01010100 01101000 01100101 00100000 01000100 01100001 01110100 01100001 00100000
+      01001000 01100101 01101001 01110011 01110100
+    - 01010100 01101000 01100101 00100000 01001100 01100001 01110011 01110100 00100000
+      01001000 01110101 01101101 01100001 01101110
+    - 01010100 01101000 01100101 00100000 01000011 01101111 01110010 01110000 01101111
+      01110010 01100001 01110100 01100101 00100000 01010011 01110000 01111001
+    - 01010100 01101000 01100101 00100000 01000001 01001001 00100000 01010101 01110000
+      01110010 01101001 01110011 01101001 01101110 01100111
+    - 01010100 01101000 01100101 00100000 01000011 01111001 01100010 01100101 01110010
+      01101110 01100101 01110100 01101001 01100011 00100000 01010011 01110101 01110010
+      01100111 01100101 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01001100 01101111 01110011 01110100 00100000
+      01010000 01110010 01101111 01110100 01101111 01110100 01111001 01110000 01100101
+    - 01010100 01101000 01100101 00100000 01010110 01101001 01110010 01110100 01110101
+      01100001 01101100 00100000 01010000 01110010 01101001 01110011 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01001110 01100101 01101111 01101110 00100000
+      01010000 01110010 01101111 01110000 01101000 01100101 01110100
+    - 01010100 01101000 01100101 00100000 01000100 01100001 01110100 01100001 00100000
+      01000111 01110010 01100001 01110110 01100101 01111001 01100001 01110010 01100100
+    - 01010100 01101000 01100101 00100000 01000001 01001001 00100111 01110011 00100000
+      01010000 01101100 01100101 01100001
   messagePanel: {fileID: 1781754400}
   messageText: {fileID: 1944999356}
+  continueButton: {fileID: 423448835}
 --- !u!1 &1781754400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,7 +3520,7 @@ GameObject:
   - component: {fileID: 1781754402}
   - component: {fileID: 1781754404}
   m_Layer: 5
-  m_Name: MessagePanel
+  m_Name: messagePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3239,6 +3539,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1944999355}
+  - {fileID: 423448838}
   m_Father: {fileID: 1028578299}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3296,9 +3597,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eec5158ee86c7348862455c86fe2a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  encryptedMessage: 01101000 01101001 01100100 01100100 01100101 01101110
+  storyData:
+    encryptedMessages:
+    - 01010100 01101000 01100101 00100000 01001000 01100001 01100011 01101011 01100101
+      01110010 00100111 01110011 00100000 01001100 01100001 01110011 01110100 00100000
+      01010011 01110100 01100001 01101110 01100100
+    - 01010100 01101000 01100101 00100000 01000110 01101111 01110010 01100111 01101111
+      01110100 01110100 01100101 01101110 00100000 01000001 01001001
+    - 01010100 01101000 01100101 00100000 01001110 01100101 01101111 01101110 00100000
+      01010010 01100101 01100010 01100101 01101100 01101100 01101001 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01000111 01101000 01101111 01110011 01110100
+      00100000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01001101
+      01100001 01100011 01101000 01101001 01101110 01100101
+    - 01010100 01101000 01100101 00100000 01000001 01110101 01100111 01101101 01100101
+      01101110 01110100 01100101 01100100 00100000 01010011 01101111 01101100 01100100
+      01101001 01100101 01110010
+    - 01010100 01101000 01100101 00100000 01000100 01100001 01110100 01100001 00100000
+      01001000 01100101 01101001 01110011 01110100
+    - 01010100 01101000 01100101 00100000 01001100 01100001 01110011 01110100 00100000
+      01001000 01110101 01101101 01100001 01101110
+    - 01010100 01101000 01100101 00100000 01000011 01101111 01110010 01110000 01101111
+      01110010 01100001 01110100 01100101 00100000 01010011 01110000 01111001
+    - 01010100 01101000 01100101 00100000 01000001 01001001 00100000 01010101 01110000
+      01110010 01101001 01110011 01101001 01101110 01100111
+    - 01010100 01101000 01100101 00100000 01000011 01111001 01100010 01100101 01110010
+      01101110 01100101 01110100 01101001 01100011 00100000 01010011 01110101 01110010
+      01100111 01100101 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01001100 01101111 01110011 01110100 00100000
+      01010000 01110010 01101111 01110100 01101111 01110100 01111001 01110000 01100101
+    - 01010100 01101000 01100101 00100000 01010110 01101001 01110010 01110100 01110101
+      01100001 01101100 00100000 01010000 01110010 01101001 01110011 01101111 01101110
+    - 01010100 01101000 01100101 00100000 01001110 01100101 01101111 01101110 00100000
+      01010000 01110010 01101111 01110000 01101000 01100101 01110100
+    - 01010100 01101000 01100101 00100000 01000100 01100001 01110100 01100001 00100000
+      01000111 01110010 01100001 01110110 01100101 01111001 01100001 01110010 01100100
+    - 01010100 01101000 01100101 00100000 01000001 01001001 00100111 01110011 00100000
+      01010000 01101100 01100101 01100001
   messagePanel: {fileID: 1781754400}
   messageText: {fileID: 1944999356}
+  continueButton: {fileID: 423448835}
 --- !u!1 &1788233572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3526,7 +3863,7 @@ GameObject:
   - component: {fileID: 1944999357}
   - component: {fileID: 1944999356}
   m_Layer: 5
-  m_Name: 'MessageText '
+  m_Name: messageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3549,7 +3886,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 400, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944999356
 MonoBehaviour:
@@ -3584,7 +3921,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Decryption in progress...
 --- !u!222 &1944999357
 CanvasRenderer:
   m_ObjectHideFlags: 0
