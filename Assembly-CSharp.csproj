@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\TileNode.cs" />
     <Compile Include="Assets\Scripts\EndingManager.cs" />
     <Compile Include="Assets\Scripts\SecurityBot.cs" />
+    <Compile Include="Assets\Scripts\StoryData.cs" />
     <Compile Include="Assets\Scripts\SecurityNode.cs" />
     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\RechargeStation.cs" />
