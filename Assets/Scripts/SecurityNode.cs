@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+using System;
+using Random = UnityEngine.Random;
 public class SecurityNode : MonoBehaviour
 {
     private bool isHacked = false;
     private SpriteRenderer spriteRenderer;
     private static bool isAlreadyPlaced = false;
-   
+
+    public static event Action OnNodeHacked;
+
     void Start()
     {
 
@@ -70,8 +73,9 @@ public class SecurityNode : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !isHacked && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 1.5f)
         {
             isHacked = true;
-            spriteRenderer.color = Color.red; 
-            
+            spriteRenderer.color = Color.red;
+            OnNodeHacked?.Invoke();
+
         }
     }
 }
