@@ -18,7 +18,7 @@ public class SecurityBot : MonoBehaviour
     private bool isGameOver = false;
     private float decisionCooldown = 0.5f;
     private float lastDecisionTime;
-
+    private bool isFrozen = false;
     [SerializeField] private int maxRetryAttempts = 3;
 
     void Start()
@@ -39,8 +39,29 @@ public class SecurityBot : MonoBehaviour
         gameManager = FindFirstObjectByType<GameManager>();
         rb = GetComponent<Rigidbody2D>();
         lastDecisionTime = Time.time;
+
+        
+        SecurityNode.OnNodeHacked += FreezeEnemies;
+    }
+    void OnDestroy()
+    { 
+        SecurityNode.OnNodeHacked -= FreezeEnemies;
     }
 
+    void FreezeEnemies()
+    {
+        if (!isFrozen)
+        {
+            StartCoroutine(FreezeForSeconds(6f));
+        }
+    }
+    IEnumerator FreezeForSeconds(float seconds)
+    {
+        isFrozen = true;
+        rb.linearVelocity = Vector2.zero; 
+        yield return new WaitForSeconds(seconds);
+        isFrozen = false;
+    }
     bool SnapToValidGridPosition()
     {
         List<Tile> connectedTiles = gridManager.GetAllConnectedTiles();
@@ -96,7 +117,7 @@ public class SecurityBot : MonoBehaviour
 
     void Update()
     {
-        if (isGameOver || player == null) return;
+        if (isGameOver || player == null || isFrozen) return;
 
         if (Time.time - lastDecisionTime > decisionCooldown)
         {
