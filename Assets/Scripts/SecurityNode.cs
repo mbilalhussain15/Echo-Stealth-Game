@@ -16,16 +16,16 @@ public class SecurityNode : MonoBehaviour
         if (!isAlreadyPlaced)
         {
             PlaceInSecondRow();
-            isAlreadyPlaced = true; 
+            isAlreadyPlaced = true;
         }
         else
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+
     }
-  
+
     public static void ResetPlacement()
     {
         isAlreadyPlaced = false;
@@ -48,11 +48,11 @@ public class SecurityNode : MonoBehaviour
 
         if (validSlots.Count > 0)
         {
-           
+
             Vector2Int selectedSlot = validSlots[Random.Range(0, validSlots.Count)];
-            RechargeStation.usedColumns.Add(selectedSlot.y); 
+            RechargeStation.usedColumns.Add(selectedSlot.y);
             transform.position = gridManager.grid[selectedSlot.x, selectedSlot.y].transform.position;
-           
+
         }
         else
         {
@@ -64,13 +64,13 @@ public class SecurityNode : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-         
+
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isHacked && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 1.5f)
+        if (Input.GetKeyDown(KeyCode.F) && !isHacked && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 1.5f)
         {
             isHacked = true;
             spriteRenderer.color = Color.red;
