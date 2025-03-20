@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         messagePanel.SetActive(true);
         gameOverText.text = "Player has been killed. Game Over!";
         restartButton.gameObject.SetActive(true);
+        StoryLog.ResetFragmentCounter();
         Time.timeScale = 0f;
     }
     void RestartGame()
