@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{07FD6A69-4096-5EFA-DF00-E94BB34E1933}</ProjectGuid>
+    <ProjectGuid>{F7ECF9D8-B85E-EA20-D049-DCE6843A067B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\TileNode.cs" />
     <Compile Include="Assets\Scripts\EndingManager.cs" />
     <Compile Include="Assets\Scripts\SecurityBot.cs" />
+    <Compile Include="Assets\Scripts\StoryData.cs" />
     <Compile Include="Assets\Scripts\SecurityNode.cs" />
     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\RechargeStation.cs" />

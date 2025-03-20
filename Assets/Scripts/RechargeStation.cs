@@ -54,7 +54,6 @@ public class RechargeStation : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<EnergySystem>().RechargeEnergy(rechargeAmount);
-            Debug.Log("⚡ Energy Recharged!");
         }
     }
 }
