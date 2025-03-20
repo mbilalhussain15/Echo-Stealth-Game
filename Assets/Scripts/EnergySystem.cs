@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;  
 
 public class EnergySystem : MonoBehaviour
@@ -49,7 +49,6 @@ public class EnergySystem : MonoBehaviour
         {
             UseEnergy(10);
         }
-
        
     }
 
