@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; // UI namespace include karo
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private GridManager gridManager;
     private Coroutine stealthCoroutine;
     public bool IsStealthed => isStealthed;
+
+    public Text stealthTimerText; // Text component ka reference
 
     void Start()
     {
@@ -30,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
         transform.position = GetBottomMostConnectedTilePosition();
         targetPosition = transform.position;
         spriteRenderer.color = Color.white;
+
+        // Stealth timer text ko shuru mein hide karo
+        if (stealthTimerText != null)
+        {
+            stealthTimerText.gameObject.SetActive(false);
+        }
     }
 
     Vector2 GetBottomMostConnectedTilePosition()
@@ -69,12 +78,11 @@ public class PlayerMovement : MonoBehaviour
         HandleStealth();
     }
 
-
     private bool isMoving = false;
 
     void HandleMovement()
     {
-        if (isMoving) return; 
+        if (isMoving) return;
 
         Vector2 moveDirection = GetInputDirection();
         if (moveDirection == Vector2.zero) return;
@@ -100,8 +108,6 @@ public class PlayerMovement : MonoBehaviour
         isMoving = false;
     }
 
-
-
     Vector2 GetInputDirection()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) return Vector2.up;
@@ -110,7 +116,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) return Vector2.right;
         return Vector2.zero;
     }
-
 
     bool IsPositionValid(Vector2 position)
     {
@@ -129,9 +134,8 @@ public class PlayerMovement : MonoBehaviour
         {
             return true;
         }
-        return false; 
+        return false;
     }
-
 
     void HandleStealth()
     {
@@ -140,13 +144,46 @@ public class PlayerMovement : MonoBehaviour
             isStealthed = true;
             spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
             stealthCoroutine = StartCoroutine(DeactivateStealth());
+            StartCoroutine(UpdateStealthTimerUI()); // Timer UI update start karo
         }
     }
+
     IEnumerator DeactivateStealth()
     {
         yield return new WaitForSeconds(6f);
         isStealthed = false;
         spriteRenderer.color = Color.white;
         stealthCoroutine = null;
+
+        // Timer text ko hide karo
+        if (stealthTimerText != null)
+        {
+            stealthTimerText.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator UpdateStealthTimerUI()
+    {
+        if (stealthTimerText != null)
+        {
+            stealthTimerText.gameObject.SetActive(true); // Timer text ko show karo
+        }
+
+        int timeLeft = 6;
+        while (timeLeft > 0)
+        {
+            if (stealthTimerText != null)
+            {
+                stealthTimerText.text = "Stealth Timer: " + timeLeft; // Timer update karo
+            }
+            yield return new WaitForSeconds(1f);
+            timeLeft--;
+        }
+
+        // Timer khatam hone par text ko hide karo
+        if (stealthTimerText != null)
+        {
+            stealthTimerText.gameObject.SetActive(false);
+        }
     }
 }

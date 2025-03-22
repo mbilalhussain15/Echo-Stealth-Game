@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI; // UI namespace include karo
 
 public class SecurityBot : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class SecurityBot : MonoBehaviour
     private bool isFrozen = false;
     [SerializeField] private int maxRetryAttempts = 3;
 
+    // UI Timer ka logic
+    public Text freezeTimerText; // UI Text component assign karo
+    private Coroutine freezeTimerCoroutine;
+
     void Start()
     {
         gridManager = FindFirstObjectByType<GridManager>();
@@ -40,11 +45,17 @@ public class SecurityBot : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lastDecisionTime = Time.time;
 
-        
         SecurityNode.OnNodeHacked += FreezeEnemies;
+
+        // UI Timer ko shuru mein hide karo
+        if (freezeTimerText != null)
+        {
+            freezeTimerText.gameObject.SetActive(false);
+        }
     }
+
     void OnDestroy()
-    { 
+    {
         SecurityNode.OnNodeHacked -= FreezeEnemies;
     }
 
@@ -52,16 +63,48 @@ public class SecurityBot : MonoBehaviour
     {
         if (!isFrozen)
         {
-            StartCoroutine(FreezeForSeconds(6f));
+            StartCoroutine(FreezeForSeconds(6f)); // 6 seconds ka freeze
         }
     }
+
     IEnumerator FreezeForSeconds(float seconds)
     {
-        isFrozen = true;
-        rb.linearVelocity = Vector2.zero; 
-        yield return new WaitForSeconds(seconds);
-        isFrozen = false;
+        isFrozen = true; // Enemy ko freeze karo
+        rb.linearVelocity = Vector2.zero; // Movement stop karo
+
+        // UI Timer show karo aur update karo
+        if (freezeTimerText != null)
+        {
+            freezeTimerText.gameObject.SetActive(true);
+            freezeTimerCoroutine = StartCoroutine(UpdateFreezeTimer(seconds));
+        }
+
+        yield return new WaitForSeconds(seconds); // 6 seconds wait karo
+
+        isFrozen = false; // Freeze khatam karo
+
+        // UI Timer hide karo
+        if (freezeTimerText != null)
+        {
+            freezeTimerText.gameObject.SetActive(false);
+        }
     }
+
+    // UI Timer update karne ka coroutine
+    IEnumerator UpdateFreezeTimer(float duration)
+    {
+        float timeLeft = duration;
+        while (timeLeft > 0)
+        {
+            if (freezeTimerText != null)
+            {
+                freezeTimerText.text = $"Freeze: {timeLeft:F1}s"; // Timer update karo
+            }
+            timeLeft -= Time.deltaTime;
+            yield return null;
+        }
+    }
+
     bool SnapToValidGridPosition()
     {
         List<Tile> connectedTiles = gridManager.GetAllConnectedTiles();
@@ -285,22 +328,6 @@ public class SecurityBot : MonoBehaviour
             isGameOver = true;
             StopChasing();
             if (gameManager != null) gameManager.GameOver();
-        }
-    }
-}
-
-public class EnemySpawner : MonoBehaviour
-{
-    [SerializeField] private GameObject enemyPrefab;
-    [SerializeField] private int minEnemies = 3;
-    [SerializeField] private int maxEnemies = 6;
-
-    void Start()
-    {
-        int numEnemies = Random.Range(minEnemies, maxEnemies + 1);
-        for (int i = 0; i < numEnemies; i++)
-        {
-            Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
         }
     }
 }
